@@ -74,8 +74,10 @@ BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_CMDLINE := console=ttyFIQ0,115200 init=/init no_console_suspend
 
 # Kernel Config
-TARGET_KERNEL_SOURCE := kernel/samsung/aries
-TARGET_KERNEL_CONFIG := cyanogenmod_fascinatemtd_defconfig
+#TARGET_KERNEL_SOURCE := kernel/samsung/aries
+#TARGET_KERNEL_CONFIG := cyanogenmod_fascinatemtd_defconfig
+
+TARGET_PREBUILT_KERNEL := device/samsung/fascinatemtd/kernel
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 7864320
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 262144000
@@ -109,3 +111,8 @@ BOARD_CUSTOM_BOOTIMG_MK := device/samsung/fascinatemtd/shbootimg.mk
 TARGET_RECOVERY_PRE_COMMAND := "echo 1 > /cache/.startrecovery; sync;"
 
 TARGET_OTA_ASSERT_DEVICE := aries,fascinate,fascinatemtd,SCH-I500
+
+# TWRP 2 details
+DEVICE_RESOLUTION := 480x800
+TW_INCLUDE_INJECTTWRP := true
+TW_NO_REBOOT_BOOTLOADER := true
